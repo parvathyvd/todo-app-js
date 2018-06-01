@@ -1,0 +1,198 @@
+/**********variables*********/
+
+$green: #27b99a;
+$light-green: #66c4ab;
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+}
+
+
+body{
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    padding: 10.8rem 0 0 0;
+    width: 40rem;
+    margin: 0 auto;
+
+}
+
+header{
+    width: 40rem;
+    position: fixed;
+    top: 0;
+    left:50%;
+    transform: translateX(-50%);
+
+    .add-task{
+        width: 100%;
+        height: 8rem;
+        background: $green;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+
+    }
+    .plus{
+        fill : $green;
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+
+    input{
+        font-size: inherit;
+        width: 90%;
+        height: 6rem;
+        position: absolute;
+        top: 1rem;
+        left:1rem;
+        border-top-right-radius: 2.5rem;
+        border-bottom-right-radius: 2.5rem;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        outline: none;
+        border: none;
+        background: $light-green;
+        color: rgba(255, 255, 255, 0.8);
+        text-indent: 1rem;
+
+        &::-webkit-input-placeholder{
+          color: rgba(255, 255, 255, 0.4);
+          font-size: 1.6rem;
+          padding-left: .5rem;
+  
+        }
+    }
+    button{
+        width: 6rem;
+        height: 6rem;
+        position: absolute;
+        top:1rem;
+        right: 2.9rem;
+        border-radius: 3rem;
+        box-shadow: none;
+        outline: none;
+        &:focus,&:active{
+            box-shadow: 0.25rem 0.5rem 0.5rem rgba(44,62,80,0.2);
+
+        }
+
+    }
+
+}
+
+
+ul.list-style {
+    list-style: none;
+    width: 90%;
+    margin: 0 auto;
+    color: lighten(black, 5%);
+    position: relative;
+
+
+li{
+    min-height: 5rem;
+    box-shadow: 0.25rem 0.5rem 0.5rem rgba(44,62,80,0.2);
+    padding: 2rem 1rem;
+    font-size: 1.3rem;
+    border: .035rem solid rgba(0, 0, 0, 0.08);
+    border-radius: .5rem;
+    cursor: pointer;
+
+    color: #444;
+    &:not(:last-child){
+    margin: 0 0 1rem 0;
+     }
+    }
+}
+
+.buttons{
+    position: relative;
+}
+
+.delete,.done{
+    width: 1.6rem;
+    height: 1.6rem;
+
+}
+
+.delete{
+    position: absolute;
+    top: -2rem;
+    right: 5rem;
+    fill: red;
+}
+ul.list-style li .buttons .done  {
+    position: absolute;
+    top: -2rem;
+    right: .5rem;
+    fill: $green;
+ 
+}
+ul.list-style li .buttons:last-child::before{
+    content: '';
+    position: absolute;
+    top:-2.2rem;
+    right: 3.5rem;
+    width: .12rem;
+    height: 3rem;
+    background:rgba(44,62,80,0.2);
+}
+
+ul.list-style#completed li .buttons .done svg  {
+    position: absolute;
+    top: .3rem;
+    right: .19rem;
+    fill: white;
+ 
+}
+
+
+ul.list-style#completed li .buttons .done  {
+    background: #25b99a;
+    border: 0px;
+    fill: white;
+    padding: 1.15rem;
+
+  }
+
+  ul.list-style#completed:not(:empty){
+      position: relative;
+      padding: 6rem 0 0 0;
+  }
+
+  ul.list-style#completed:not(:empty)::before{
+      content: '';
+      position: absolute;
+      top: 3rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 4rem;
+      height: .1rem;
+      background:rgba(44,62,80,0.2);
+  }
+
+
+
+/*
+.buttons .button:last-child::before{
+
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: .03rem;
+    height: 2rem;
+    display: block;
+    z-index: 5000;
+}
+*/
